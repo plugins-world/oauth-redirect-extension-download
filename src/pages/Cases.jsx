@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function Cases() {
+  const [activeTab, setActiveTab] = useState(0);
+
   const demos = [
     {
       title: '管理后台演示',
@@ -29,47 +32,53 @@ export default function Cases() {
               <p className="text-lg text-gray-600">观看实际操作演示，了解产品功能</p>
             </div>
 
-            <div className="space-y-12">
-              {demos.map((demo, index) => (
-                <div
-                  key={demo.title}
-                  className="bg-white rounded-xl shadow-md overflow-hidden"
-                >
-                  <div className="p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-white font-bold">
-                        {index + 1}
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-800">{demo.title}</h3>
-                    </div>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      {demo.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {demo.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              {/* Tab 导航 */}
+              <div className="flex border-b border-gray-200">
+                {demos.map((demo, index) => (
+                  <button
+                    key={demo.title}
+                    onClick={() => setActiveTab(index)}
+                    className={`flex-1 px-6 py-4 text-center font-medium transition-colors ${
+                      activeTab === index
+                        ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50'
+                        : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                    }`}
+                  >
+                    {demo.title}
+                  </button>
+                ))}
+              </div>
 
-                  <div className="bg-gray-900 p-4">
-                    <video
-                      className="w-full rounded-lg"
-                      controls
-                      preload="metadata"
-                      poster=""
+              {/* Tab 内容 */}
+              <div className="p-8">
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {demos[activeTab].description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {demos[activeTab].tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full"
                     >
-                      <source src={demo.video} type="video/mp4" />
-                      您的浏览器不支持视频播放。
-                    </video>
-                  </div>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              ))}
+
+                {/* 视频容器 */}
+                <div className="bg-black rounded-lg overflow-hidden">
+                  <video
+                    key={demos[activeTab].video}
+                    className="w-full max-h-[600px] object-contain"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src={demos[activeTab].video} type="video/mp4" />
+                    您的浏览器不支持视频播放。
+                  </video>
+                </div>
+              </div>
             </div>
 
             <div className="mt-12 text-center">
