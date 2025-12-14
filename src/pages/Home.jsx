@@ -1,8 +1,35 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 
 export default function Home() {
+  const [versionInfo, setVersionInfo] = useState({
+    version: '1.1.4',
+    downloadUrl: '/releases/oauth-redirect-extension-v1.1.4.zip',
+    releaseNotes: '',
+    releaseDate: '2024-12-15',
+    changes: []
+  });
+
+  useEffect(() => {
+    fetch('/version.json')
+      .then(res => res.json())
+      .then(data => {
+        const latest = data.changelog?.[0] || {};
+        setVersionInfo({
+          version: data.version,
+          downloadUrl: data.downloadUrl,
+          releaseNotes: data.releaseNotes,
+          releaseDate: data.releaseDate,
+          changes: latest.changes || []
+        });
+      })
+      .catch(err => {
+        console.error('加载版本信息失败:', err);
+      });
+  }, []);
+
   return (
     <div className="bg-gray-50">
       <Header />
@@ -19,13 +46,13 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="/releases/oauth-redirect-extension-v1.1.3.zip"
+                  href={versionInfo.downloadUrl}
                   className="download-btn bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium inline-flex items-center gap-2"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                   </svg>
-                  下载 v1.1.3
+                  下载 v{versionInfo.version}
                 </a>
                 <a
                   href="https://github.com/plugins-world/oauth-redirect-extension-download"
@@ -282,11 +309,11 @@ export default function Home() {
             <div className="bg-gray-50 rounded-xl p-8">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800">v1.1.3</h3>
-                  <p className="text-gray-600">最新版本 - 2024年12月14日</p>
+                  <h3 className="text-2xl font-bold text-gray-800">v{versionInfo.version}</h3>
+                  <p className="text-gray-600">最新版本 - {versionInfo.releaseDate.replace(/-/g, '年').replace(/年(\d+)$/, '年$1日').replace(/年(\d+)年/, '年$1月')}</p>
                 </div>
                 <a
-                  href="/releases/oauth-redirect-extension-v1.1.3.zip"
+                  href={versionInfo.downloadUrl}
                   className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -296,10 +323,7 @@ export default function Home() {
                 </a>
               </div>
               <ul className="space-y-2 text-gray-700">
-                {[
-                  '新增工具栏图标点击功能，直接打开配置页面',
-                  '优化配置页面打开方式，提升用户体验'
-                ].map((note, index) => (
+                {versionInfo.changes.map((note, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
