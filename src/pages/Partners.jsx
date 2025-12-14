@@ -4,6 +4,12 @@ import Footer from '../components/Footer';
 export default function Partners() {
   const partners = [
     {
+      name: '插件世界',
+      description: '提供 AI 网关服务，支持多模型聚合、智能路由、流量控制等企业级 AI 接入能力',
+      url: 'https://ai-gateway.fresns.cn/',
+      tags: ['AI 网关', '模型聚合', '智能路由'],
+    },
+    {
       name: '爱湾医学',
       description: '以临床质谱技术为核心，结合代谢与基因组学应用，为医疗健康产业提供一体化服务平台',
       url: 'https://aonemed.com.cn/',
