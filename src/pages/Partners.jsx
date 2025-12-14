@@ -5,9 +5,9 @@ export default function Partners() {
   const partners = [
     {
       name: '插件世界',
-      description: '提供 AI 网关服务，支持多模型聚合、智能路由、流量控制等企业级 AI 接入能力',
+      description: '提供 AI 编程服务，支持智能代码生成、代码审查、技术问答等功能，提升开发效率',
       url: 'https://ai-router.plugins-world.cn/',
-      tags: ['AI 网关', '模型聚合', '智能路由'],
+      tags: ['AI 编程', '代码生成', '智能开发'],
     },
     {
       name: '爱湾医学',
