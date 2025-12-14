@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OAuth 地址重定向助手 - 下载页面</title>
   <meta name="description" content="自动重定向 OAuth 回调地址，支持配置多条域名映射规则。解决网络隔离环境下的授权问题。">
-  <script type="module" crossorigin src="/assets/index-DeFrnZ0R.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-5QQB6iUi.css">
+  <script>
+    // GitHub Pages SPA 路由处理
+    (function() {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  <script type="module" crossorigin src="/assets/index-Dc1wN3Z0.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-KZdkrOaj.css">
 </head>
 <body>
   <div id="root"></div>
