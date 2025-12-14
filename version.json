@@ -1,6 +1,6 @@
 {
   "version": "1.1.4",
-  "downloadUrl": "https://plugins-world.github.io/oauth-redirect-extension-download/releases/oauth-redirect-extension-v1.1.4.zip",
+  "downloadUrl": "https://oauth-redirect.plugins-world.cn/releases/oauth-redirect-extension-v1.1.4.zip",
   "releaseNotes": "- 新增自动版本检查功能，每天检查更新\n- 发现新版本时显示浏览器通知提醒\n- 配置页面显示更新横幅，一键跳转下载",
   "releaseDate": "2024-12-15",
   "changelog": [
