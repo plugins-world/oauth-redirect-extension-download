@@ -1,0 +1,26 @@
+{
+  "name": "oauth-redirect-extension-download",
+  "version": "1.0.0",
+  "description": "OAuth 地址重定向助手 - 下载页面",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "vite": "^5.0.10"
+  },
+  "keywords": [
+    "oauth",
+    "redirect",
+    "chrome-extension",
+    "download-page"
+  ],
+  "author": "Plugins World",
+  "license": "MIT"
+}
