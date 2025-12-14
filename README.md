@@ -47,7 +47,7 @@ git init
 git add .
 git commit -m "feat: 初始化下载页面项目"
 git branch -M main
-git remote add origin git@github.com:YOUR_USERNAME/oauth-redirect-extension-download.git
+git remote add origin git@github.com:plugins-world/oauth-redirect-extension-download.git
 git push -u origin main
 ```
 
@@ -63,7 +63,7 @@ git push -u origin main
 
 等待几分钟后，访问：
 ```
-https://YOUR_USERNAME.github.io/oauth-redirect-extension-download/
+https://plugins-world.github.io/oauth-redirect-extension-download/
 ```
 
 ## 更新版本
