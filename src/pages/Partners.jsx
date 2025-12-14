@@ -6,7 +6,7 @@ export default function Partners() {
     {
       name: '插件世界',
       description: '提供 AI 网关服务，支持多模型聚合、智能路由、流量控制等企业级 AI 接入能力',
-      url: 'https://ai-gateway.fresns.cn/',
+      url: 'https://ai-router.plugins-world.cn/',
       tags: ['AI 网关', '模型聚合', '智能路由'],
     },
     {
