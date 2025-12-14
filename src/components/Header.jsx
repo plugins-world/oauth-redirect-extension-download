@@ -40,6 +40,16 @@ export default function Header() {
               生态工具
             </Link>
             <Link
+              to="/cases"
+              className={`font-medium transition ${
+                location.pathname === '/cases'
+                  ? 'text-gray-900 border-b-2 border-gray-900 pb-1'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              案例
+            </Link>
+            <Link
               to="/partners"
               className={`font-medium transition ${
                 location.pathname === '/partners'
