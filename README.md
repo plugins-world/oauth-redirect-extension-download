@@ -10,7 +10,7 @@ oauth-redirect-extension-download/
 ├── oauth-redirect-extension-v1.1.3.zip # 扩展安装包
 ├── assets/
 │   └── images/
-│       ├── icon.png                    # 扩展图标
+│       ├── logo.png                    # logo
 │       └── screenshots/                # 截图目录
 │           └── options-page.png        # 配置页面截图
 ├── package.json                        # 项目配置

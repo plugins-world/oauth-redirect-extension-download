@@ -29,13 +29,13 @@ export default function Partners() {
 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">合作伙伴</h2>
               <p className="text-lg text-gray-600">感谢以下合作伙伴的支持</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8">
               {partners.map((partner) => (
                 <a
                   key={partner.name}

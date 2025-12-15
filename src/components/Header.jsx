@@ -9,7 +9,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <img
-              src="/assets/images/icon.png"
+              src="/assets/images/logo.png"
               alt="OAuth Redirect Extension"
               className="w-12 h-12 rounded-lg"
             />
