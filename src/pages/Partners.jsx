@@ -4,16 +4,22 @@ import Footer from '../components/Footer';
 export default function Partners() {
   const partners = [
     {
-      name: '插件世界',
-      description: '提供 AI 编程服务，支持智能代码生成、代码审查、技术问答等功能，提升开发效率',
-      url: 'https://ai-router.plugins-world.cn/',
-      tags: ['AI 编程', '代码生成', '智能开发'],
-    },
-    {
       name: '爱湾医学',
       description: '以临床质谱技术为核心，结合代谢与基因组学应用，为医疗健康产业提供一体化服务平台',
       url: 'https://aonemed.com.cn/',
       tags: ['医疗健康', '质谱技术', '基因组学'],
+    },
+    {
+      name: '蝉印诊所管家',
+      description: '开源的消费医疗 SaaS 管理系统，专为私立诊所、连锁医疗机构、医美、口腔、眼科等提供全方位的数字化解决方案',
+      url: 'https://www.yiliaocrm.com',
+      tags: ['医疗 SaaS', '诊所管理', '开源系统'],
+    },
+    {
+      name: '插件世界',
+      description: '提供 AI 编程服务，支持智能代码生成、代码审查、技术问答等功能，提升开发效率',
+      url: 'https://ai-router.plugins-world.cn/',
+      tags: ['AI 编程', '代码生成', '智能开发'],
     },
     {
       name: 'StarTeam',
@@ -32,7 +38,7 @@ export default function Partners() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">合作伙伴</h2>
-              <p className="text-base md:text-lg text-gray-600">感谢以下合作伙伴的支持</p>
+              <p className="text-base md:text-lg text-gray-600">感谢以下合作伙伴的支持 (按字母排序)</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
