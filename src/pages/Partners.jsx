@@ -27,15 +27,15 @@ export default function Partners() {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">合作伙伴</h2>
-              <p className="text-lg text-gray-600">感谢以下合作伙伴的支持</p>
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">合作伙伴</h2>
+              <p className="text-base md:text-lg text-gray-600">感谢以下合作伙伴的支持</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {partners.map((partner) => (
                 <a
                   key={partner.name}

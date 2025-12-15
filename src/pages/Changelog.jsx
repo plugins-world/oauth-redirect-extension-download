@@ -31,8 +31,8 @@ export default function Changelog() {
     <div className="bg-gray-50">
       <Header />
 
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             {/* Loading State */}
             {loading && (
@@ -59,10 +59,10 @@ export default function Changelog() {
                 {data.changelog && data.changelog.length > 0 ? (
                   data.changelog.map((version, index) => (
                     <div key={index} className="version-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                      <div className="p-6">
-                        <div className="flex items-center justify-between mb-4">
+                      <div className="p-4 md:p-6">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-4">
                           <div className="flex items-center gap-3">
-                            <span className="text-2xl font-bold text-gray-900">v{version.version}</span>
+                            <span className="text-xl md:text-2xl font-bold text-gray-900">v{version.version}</span>
                             {index === 0 && (
                               <span className="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
                                 最新版本

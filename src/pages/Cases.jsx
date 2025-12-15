@@ -24,12 +24,12 @@ export default function Cases() {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">产品案例演示</h2>
-              <p className="text-lg text-gray-600">观看实际操作演示，了解产品功能</p>
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">产品案例演示</h2>
+              <p className="text-base md:text-lg text-gray-600">观看实际操作演示，了解产品功能</p>
             </div>
 
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
@@ -39,7 +39,7 @@ export default function Cases() {
                   <button
                     key={demo.title}
                     onClick={() => setActiveTab(index)}
-                    className={`flex-1 px-6 py-4 text-center font-medium transition-colors ${
+                    className={`flex-1 px-4 md:px-6 py-3 md:py-4 text-center text-sm md:text-base font-medium transition-colors ${
                       activeTab === index
                         ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50'
                         : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
@@ -70,7 +70,7 @@ export default function Cases() {
                 <div className="bg-black rounded-lg overflow-hidden">
                   <video
                     key={demos[activeTab].video}
-                    className="w-full max-h-[600px] object-contain"
+                    className="w-full max-h-[400px] md:max-h-[600px] object-contain"
                     controls
                     preload="metadata"
                   >

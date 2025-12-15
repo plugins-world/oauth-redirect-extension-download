@@ -71,15 +71,15 @@ export default function Ecosystem() {
       <Header />
 
       {/* 生态工具部分 */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">插件世界生态工具</h2>
-              <p className="text-lg text-gray-600">为开发者打造的专业工具集合</p>
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">插件世界生态工具</h2>
+              <p className="text-base md:text-lg text-gray-600">为开发者打造的专业工具集合</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               {tools.map((tool) => (
                 <a
                   key={tool.name}
