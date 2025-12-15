@@ -41,7 +41,7 @@ export default function Partners() {
               <p className="text-base md:text-lg text-gray-600">感谢以下合作伙伴的支持 (按字母排序)</p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {partners.map((partner) => (
                 <a
                   key={partner.name}
