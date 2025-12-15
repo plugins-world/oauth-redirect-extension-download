@@ -48,9 +48,9 @@ export default function Partners() {
                   href={partner.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                  className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col"
                 >
-                  <div className="p-8">
+                  <div className="p-8 flex-1">
                     <h3 className="text-2xl font-bold text-gray-800 mb-3">{partner.name}</h3>
                     <p className="text-gray-600 leading-relaxed mb-6">{partner.description}</p>
 
