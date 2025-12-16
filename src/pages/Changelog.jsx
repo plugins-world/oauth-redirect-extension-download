@@ -28,89 +28,98 @@ export default function Changelog() {
   }, []);
 
   return (
-    <div className="bg-gray-50">
-      <Header />
+    <div className="relative" style={{ background: 'var(--cyber-bg)', minHeight: '100vh' }}>
+      <div className="cyber-grid"></div>
+      <div className="relative z-10">
+        <Header />
 
-      <section className="py-12 md:py-16 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            {/* Loading State */}
-            {loading && (
-              <div className="loading text-center py-12">
-                <div className="inline-block w-8 h-8 border-4 border-gray-300 border-t-gray-900 rounded-full animate-spin"></div>
-                <p className="mt-4 text-gray-600">加载中...</p>
-              </div>
-            )}
+        <section className="py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-16">
+              <span className="text-xs font-bold tracking-widest uppercase mb-4 inline-block" style={{ color: 'var(--cyber-primary)' }}>
+                [ VERSION HISTORY ]
+              </span>
+              <h1 className="cyber-title text-4xl md:text-6xl">更新日志</h1>
+            </div>
 
-            {/* Error State */}
-            {error && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-                <svg className="w-12 h-12 text-red-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <h3 className="text-lg font-semibold text-red-800 mb-2">加载失败</h3>
-                <p className="text-red-600">加载版本信息失败: {error}</p>
-              </div>
-            )}
+            <div className="max-w-4xl mx-auto">
+              {loading && (
+                <div className="text-center py-20">
+                  <div className="inline-block w-16 h-16 border-4 rounded-full animate-spin" style={{ borderColor: 'var(--cyber-border)', borderTopColor: 'var(--cyber-primary)' }}></div>
+                  <p className="mt-6 cyber-text font-mono">LOADING DATA...</p>
+                </div>
+              )}
 
-            {/* Changelog List */}
-            {!loading && !error && data && (
-              <div className="space-y-6">
-                {data.changelog && data.changelog.length > 0 ? (
-                  data.changelog.map((version, index) => (
-                    <div key={index} className="version-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                      <div className="p-4 md:p-6">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-4">
-                          <div className="flex items-center gap-3">
-                            <span className="text-xl md:text-2xl font-bold text-gray-900">v{version.version}</span>
+              {error && (
+                <div className="cyber-border rounded-lg p-8 text-center" style={{ background: 'var(--cyber-surface)', borderColor: 'var(--cyber-accent)' }}>
+                  <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="var(--cyber-accent)" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--cyber-accent)' }}>ERROR // LOAD FAILED</h3>
+                  <p className="cyber-text-dim font-mono text-sm">{error}</p>
+                </div>
+              )}
+
+              {!loading && !error && data && (
+                <div className="space-y-6">
+                  {data.changelog && data.changelog.length > 0 ? (
+                    data.changelog.map((version, index) => (
+                      <div key={index} className="version-card stagger-fade-in rounded-lg p-6 md:p-8">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+                          <div className="flex items-center gap-4">
+                            <span className="text-3xl font-bold font-mono" style={{ color: 'var(--cyber-primary)' }}>
+                              v{version.version}
+                            </span>
                             {index === 0 && (
-                              <span className="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
-                                最新版本
+                              <span className="px-3 py-1 rounded text-xs font-bold uppercase tracking-wider" style={{ background: 'var(--cyber-primary)', color: 'var(--cyber-bg)' }}>
+                                LATEST
                               </span>
                             )}
                           </div>
-                          <span className="text-sm text-gray-500">{version.date}</span>
+                          <span className="text-sm font-mono cyber-text-dim">{version.date}</span>
                         </div>
 
-                        <div className="space-y-2">
+                        <div className="space-y-3">
                           {version.changes.map((change, changeIndex) => (
-                            <div key={changeIndex} className="flex items-start gap-2">
-                              <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
-                              </svg>
-                              <span className="text-gray-700">{change}</span>
+                            <div key={changeIndex} className="flex items-start gap-3 group">
+                              <div className="flex-shrink-0 w-6 h-6 rounded flex items-center justify-center mt-0.5 transition-all group-hover:scale-110" style={{ background: 'var(--cyber-primary)' }}>
+                                <svg className="w-4 h-4" fill="none" stroke="var(--cyber-bg)" viewBox="0 0 24 24" strokeWidth="3">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                              </div>
+                              <span className="cyber-text flex-1 leading-relaxed">{change}</span>
                             </div>
                           ))}
                         </div>
 
                         {index === 0 && (
-                          <div className="mt-6 pt-6 border-t border-gray-200">
+                          <div className="mt-8 pt-6 border-t-2" style={{ borderColor: 'var(--cyber-border)' }}>
                             <a
                               href={data.downloadUrl}
-                              className="download-btn bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2"
+                              className="download-btn px-6 py-3 rounded-lg font-bold inline-flex items-center gap-2"
                             >
                               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                               </svg>
-                              下载此版本
+                              <span>DOWNLOAD</span>
                             </a>
                           </div>
                         )}
                       </div>
+                    ))
+                  ) : (
+                    <div className="text-center py-20">
+                      <p className="cyber-text-dim font-mono">NO VERSION DATA FOUND</p>
                     </div>
-                  ))
-                ) : (
-                  <div className="text-center py-12 text-gray-500">
-                    暂无版本更新记录
-                  </div>
-                )}
-              </div>
-            )}
+                  )}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 }
