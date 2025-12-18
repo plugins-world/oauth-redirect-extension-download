@@ -1,9 +1,18 @@
 {
-  "version": "1.1.4",
-  "downloadUrl": "https://oauth-redirect.plugins-world.cn/releases/oauth-redirect-extension-v1.1.4.zip",
-  "releaseNotes": "- 新增自动版本检查功能，每天检查更新\n- 发现新版本时显示浏览器通知提醒\n- 配置页面显示更新横幅，一键跳转下载",
-  "releaseDate": "2025-12-15",
+  "version": "1.1.5",
+  "downloadUrl": "https://oauth-redirect.plugins-world.cn/releases/oauth-redirect-extension-v1.1.5.zip",
+  "releaseNotes": "- 修复存储 API 兼容性问题\n- 新增版本号显示功能\n- 优化错误处理机制",
+  "releaseDate": "2025-12-18",
   "changelog": [
+    {
+      "version": "1.1.5",
+      "date": "2025-12-18",
+      "changes": [
+        "修复 chrome.storage.sync 未定义导致的保存失败问题",
+        "新增配置页面版本号显示",
+        "优化存储 API 降级机制，提升兼容性"
+      ]
+    },
     {
       "version": "1.1.4",
       "date": "2025-12-15",
