@@ -1,9 +1,20 @@
 {
-  "version": "1.2.1",
-  "downloadUrl": "https://oauth-redirect.plugins-world.cn/releases/oauth-redirect-extension-v1.2.1.zip",
-  "releaseNotes": "- 新增手动检查更新按钮\n- 优化更新检查体验\n- 修复已知问题",
+  "version": "1.2.2",
+  "downloadUrl": "https://oauth-redirect.plugins-world.cn/releases/oauth-redirect-extension-v1.2.2.zip",
+  "releaseNotes": "- 优化更新检查功能，添加超时和重试机制\n- 修改使用说明示例域名\n- 提升稳定性和用户体验",
   "releaseDate": "2025-12-23",
   "changelog": [
+    {
+      "version": "1.2.2",
+      "date": "2025-12-23",
+      "changes": [
+        "优化更新检查功能，添加10秒超时控制",
+        "网络错误时自动重试最多2次",
+        "更详细的错误日志和状态反馈",
+        "修改使用说明中的域名示例为通用格式",
+        "提升网络不稳定环境下的可靠性"
+      ]
+    },
     {
       "version": "1.2.1",
       "date": "2025-12-23",
