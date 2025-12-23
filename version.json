@@ -1,9 +1,21 @@
 {
-  "version": "1.1.5",
-  "downloadUrl": "https://oauth-redirect.plugins-world.cn/releases/oauth-redirect-extension-v1.1.5.zip",
-  "releaseNotes": "- 修复存储 API 兼容性问题\n- 新增版本号显示功能\n- 优化错误处理机制",
-  "releaseDate": "2025-12-18",
+  "version": "1.2.0",
+  "downloadUrl": "https://oauth-redirect.plugins-world.cn/releases/oauth-redirect-extension-v1.2.0.zip",
+  "releaseNotes": "- 新增重定向替换模式配置功能\n- 支持只替换域名或替换整个 URL\n- 优化使用说明文档",
+  "releaseDate": "2025-12-23",
   "changelog": [
+    {
+      "version": "1.2.0",
+      "date": "2025-12-23",
+      "changes": [
+        "新增重定向替换模式配置：支持只替换域名或替换整个 URL",
+        "只替换域名模式：保留原 URL 的路径和参数，只替换域名部分",
+        "替换整个 URL 模式：使用目标 URL 替换，但保留原 URL 的查询参数",
+        "添加向后兼容处理，旧规则自动使用默认模式",
+        "优化配置页面 UI，增加替换模式单选按钮",
+        "更新使用说明，详细说明两种模式的区别和使用场景"
+      ]
+    },
     {
       "version": "1.1.5",
       "date": "2025-12-18",
