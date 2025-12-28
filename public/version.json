@@ -1,9 +1,17 @@
 {
-  "version": "1.3.0",
-  "downloadUrl": "https://oauth-redirect.plugins-world.cn/releases/oauth-redirect-extension-v1.3.0.zip",
-  "releaseNotes": "- 新增导出和导入配置功能\n- 支持 JSON 格式配置文件\n- 方便备份和迁移配置",
-  "releaseDate": "2025-12-23",
+  "version": "1.3.1",
+  "downloadUrl": "https://oauth-redirect.plugins-world.cn/releases/oauth-redirect-extension-v1.3.1.zip",
+  "releaseNotes": "- 修复 iframe 中 OAuth 重定向不生效的问题",
+  "releaseDate": "2025-12-28",
   "changelog": [
+    {
+      "version": "1.3.1",
+      "date": "2025-12-28",
+      "changes": [
+        "修复 iframe 中 OAuth 重定向不生效的问题",
+        "移除主框架限制，支持在 iframe 中拦截和重定向"
+      ]
+    },
     {
       "version": "1.3.0",
       "date": "2025-12-23",
